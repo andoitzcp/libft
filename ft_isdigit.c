@@ -6,11 +6,11 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:34:24 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/11/28 20:38:46 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/02 20:51:19 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isdigit(int c)
 {
 	if (c < 48 || c > 57)
 		return (0);

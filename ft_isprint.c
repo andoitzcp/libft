@@ -6,14 +6,14 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:11:36 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/11/28 21:36:19 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/02 21:08:51 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-		if (c < 32 || c > 127)
-				return (0);
-		else
-				return (1);
+	if (c < 32 || c > 127)
+		return (0);
+	else
+		return (1);
 }
