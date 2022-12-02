@@ -6,13 +6,11 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 19:38:33 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/01 09:41:51 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/02 23:59:06 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_strlen(const char *str);
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -35,14 +33,4 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		len--;
 	}
 	return (NULL);
-}
-
-int	ft_strlen(const char *str)
-{
-	size_t index;
-
-	index = 0;
-	while (str[index] != '\0')
-		index++;
-	return (index);
 }
