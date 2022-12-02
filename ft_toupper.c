@@ -6,14 +6,14 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:19:44 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/11/29 16:30:33 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/02 21:32:02 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-		if (c > 96 && c < 123)
-				return (c - 32);
-		else
-				return (c);
+	if (c > 96 && c < 123)
+		return (c - 32);
+	else
+		return (c);
 }
