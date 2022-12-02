@@ -6,20 +6,21 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 22:17:07 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/11/28 22:29:28 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/02 19:24:00 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *, int c, size_t n)
-{
-		unsigned char *p;
+#include "libft.h" 
 
-		*p = b;
-		while (n < 0)
-		{
-				*p = c;
-				n -= 1;
-				p += 1;
-		}
-		return (s);
+void	*ft_memset(void *s, int c, size_t n)
+{
+	char	*cs;
+
+	cs = s;
+	if (cs)
+	{
+		while (n--)
+			*cs++ = c;
+	}
+	return (s);
 }
