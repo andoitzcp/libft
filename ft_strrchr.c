@@ -6,52 +6,30 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:09:27 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/11/29 18:56:14 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/02 23:49:21 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(const char *str);
-
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-		int		len;
-		char	*ptr;
+	int		index;
+	int		cache;
 
-		len = ft_strlen(s);
-		ptr = (char *)&s[len];
-		while (len > 0)
-		{
-				if (s[len] == c)
-						return ((char *)&s[len]);
-				len -= 1;
-		}
-		return (ptr);
-}
-
-int	ft_strlen(const char *str)
-{
-		int	index;
-
-		index = 0;
-		while (str[index] > 0)
-				index += 1;
-		return (index);
-}
-
-int	main(void)
-{
-		char	*str;
-
-		str = "asdf1234fiu";
-		printf("ptr-init: %p\t", str);
-		printf("ptr-out: %p\t", strrchr(str, 'f'));
-		printf("ptr-out: %s\n", strrchr(str, 'f'));
-		printf("ptr-init: %p\t", str);
-		printf("ptr-out: %p\t", strrchr(str, '3'));
-		printf("ptr-out: %s\n", strrchr(str, '3'));
-		printf("ptr-init: %p\t", str);
-		printf("ptr-out: %p\t", strrchr(str, '9'));
-		printf("ptr-out: %s\n", strrchr(str, '9'));
+	cache = 0;
+	index = 0;
+	while (s[index])
+	{
+		if (s[index] == c)
+			cache = index;
+		index++;
+	}
+	if (c == 0)
+		return ((char *)&s[index]);
+	else if (cache != 0)
+		return ((char *)&s[cache]);
+	else if (s[0] == c)
+		return ((char *)&s[0]);
+	return (NULL);
 }
