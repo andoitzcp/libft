@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 16:29:49 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/06 20:27:48 by acampo-p         ###   ########.fr       */
+/*   Created: 2022/12/08 22:01:05 by acampo-p          #+#    #+#             */
+/*   Updated: 2022/12/08 22:12:28 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	if (c > 64 && c < 91)
-		return (c + 32);
-	else
-		return (c);
+	char			*ptr;
+	unsigned int	index;
+
+	if (!s || !f)
+		return (NULL);
+	ptr = (char *)malloc(ft_strlen(s) + 1);
+	if (!ptr)
+		return (NULL);
+	index = 0;
+	while (s[index])
+	{
+		ptr[index] = f(index, s[index]);
+		index++;
+	}
+	ptr[index] = '\0';
+	return(ptr);
 }

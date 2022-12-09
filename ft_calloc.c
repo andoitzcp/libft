@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 16:29:49 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/06 20:27:48 by acampo-p         ###   ########.fr       */
+/*   Created: 2022/12/03 20:00:51 by acampo-p          #+#    #+#             */
+/*   Updated: 2022/12/06 20:29:56 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (c > 64 && c < 91)
-		return (c + 32);
-	else
-		return (c);
+	void	*ptr;
+
+	if (nmemb * size > 2147483647)
+		return (NULL);
+	ptr = malloc(nmemb * size);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }

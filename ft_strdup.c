@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 16:29:49 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/06 20:27:48 by acampo-p         ###   ########.fr       */
+/*   Created: 2022/12/03 21:02:06 by acampo-p          #+#    #+#             */
+/*   Updated: 2022/12/04 13:44:38 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+char	*ft_strdup(const char *s)
 {
-	if (c > 64 && c < 91)
-		return (c + 32);
-	else
-		return (c);
+	char	*scpy;
+	size_t	len;
+
+	len = ft_strlen(s) + 1;
+	scpy = (char *)malloc(len);
+	scpy = ft_memcpy(scpy, s, len);
+	return (scpy);
 }
