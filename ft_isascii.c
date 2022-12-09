@@ -6,13 +6,13 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:08:13 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/11/28 21:09:34 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/09 13:46:41 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (c > 127)
+	if (c < 0 || c > 127)
 		return (0);
 	else
 		return (1);

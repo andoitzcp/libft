@@ -6,7 +6,7 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 17:07:53 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/03 00:43:57 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:59:24 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*cs1;
 	unsigned char	*cs2;
 
+	if (!s1 || !s2)
+		return (0);
 	cs1 = (unsigned char *)s1;
 	cs2 = (unsigned char *)s2;
 	while (n-- > 0)
