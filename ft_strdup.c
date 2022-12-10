@@ -6,7 +6,7 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:02:06 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/04 13:44:38 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/10 10:28:23 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strdup(const char *s)
 
 	len = ft_strlen(s) + 1;
 	scpy = (char *)malloc(len);
+	if (!scpy)
+		return (NULL);
 	scpy = ft_memcpy(scpy, s, len);
 	return (scpy);
 }
