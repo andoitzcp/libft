@@ -6,7 +6,7 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 12:13:31 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/12 13:54:58 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:03:23 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,20 +79,19 @@ char	**ft_split(const char *s, char c)
 	cntr = 0;
 	while (s)
 	{
-		printf("flag3: %p\n", split);
+		printf("flag3: %p\n", split[cntr]);
 		while ((char)*s == c)
 			s++;
-		printf("flag4: %p\n", split);
+		printf("flag4: %p\n", split[cntr]);
 		len = substrlen(s, c);
-		*split = (char *)malloc(len + 1);
-		printf("flag6: %p\n", *split);
-		if (!*split)
+		split[cntr] = (char *)malloc(len + 1);
+		printf("flag6: %p\n", split[cntr]);
+		if (!split[cntr])
 			return (NULL);
-		ft_strlcpy(*split, s, len + 1);
-		printf("flag7: %s\n", *split);
+		ft_strlcpy(split[cntr], s, len + 1);
+		printf("flag7: %s\n", split[cntr]);
 		s = ft_strchr(s, c);
 		printf("flag8: %p\n", s);
-		split++;
 		cntr++;
 		printf("flag9: %p\n", s);
 	}
