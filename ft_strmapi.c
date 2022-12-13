@@ -6,9 +6,11 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 22:01:05 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/08 22:12:28 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/13 18:55:29 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {

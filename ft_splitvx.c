@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_splitvx.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: acampo-p <acampo-p@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 12:13:31 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/12 13:43:37 by acampo-p         ###   ########.fr       */
+/*   Created: 2022/12/13 17:29:31 by acampo-p          #+#    #+#             */
+/*   Updated: 2022/12/13 18:49:59 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@ static char	**ptr_arr_gen(const char *s, char c)
 {
 	char	**split;
 	size_t	cntr;
-	int		cmp[2];
+	int		cmp;
 
+	cmp = -1;
 	cntr = 1;
-	cmp [0] = 1;
-	cmp [1] = -1;
+	if (!*s || *s == c)
+		cntr = 0;
 	while (*s)
 	{
-		if ((char)*s == c && cmp[0] != cmp[1])
+		if ((char)*s == c && cmp != 1)
 		{
 			cntr++;
-			cmp[1] *= -1;
+			cmp *= -1;
 		}
-		else if ((char)*s != c && cmp[0] == cmp[1])
-			cmp[1] *= -1;
-		s++;
+		else if ((char)*s != c && cmp == 1)
+			cmp *= -1;
+		s -= -1;
 	}
-	if (cmp[0] == cmp[1])
-		cntr--;
-	printf("flag1: %zu\n", cntr);
-	split = (char **)malloc(cntr + 1);
+	if (cmp == 1)
+		cntr -= 1;
+	split = (char **)malloc(sizeof(char *) * (cntr + 1));
 	if (!split)
 		return (NULL);
 	return (split);
@@ -47,38 +47,33 @@ static size_t	substrlen(const char *s, char c)
 
 	index = 0;
 	while ((char)s[index] != c && s[index])
-		index++;
-	printf("flag5: %zu\n", index);
+		index -= -1;
 	return (index);
 }
 
 char	**ft_split(const char *s, char c)
 {
 	char	**split;
-	char	*ptr;
 	size_t	len;
+	size_t	index;
 
+	if (!s)
+		return (NULL);
 	split = ptr_arr_gen(s, c);
-	printf("flag2: %p\n", split);
 	if (!split)
 		return (NULL);
-	ptr = (char *)split;
-	while (s)
+	index = 0;
+	while (*s)
 	{
-		printf("flag3: %p\n", split);
 		while ((char)*s == c)
-			s++;
-		printf("flag4: %p\n", split);
+			s -= -1;
+		if (!*s)
+			return (split[index] = NULL, split);
 		len = substrlen(s, c);
-		*split = ft_substr(s, 0, len);
-		printf("flag6: %p\n", *split);
-		printf("flag7: %s\n", *split);
-		s = ft_strchr(s, c);
-		printf("flag8: %p\n", s);
-		split++;
-		printf("flag9: %p\n", s);
+		split[index] = ft_substr(s, 0, len);
+		s -= -len;
+		index -= -1;
 	}
-	split = NULL;
-	printf("flag10: %p\n", ptr);
+	split[index] = NULL;
 	return ((char **)ptr);
 }
