@@ -6,7 +6,7 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 20:42:25 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/13 19:50:11 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/14 13:56:50 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*str_gen(int n, unsigned int nbr, unsigned int dbase, size_t figs)
 {
 	char	*str;
 
-	str = (char *)malloc(sizeof(int) * (figs + 1));
+	str = (char *)malloc((figs + 1));
 	if (!str)
 		return (NULL);
 	if (n < 0)
@@ -27,7 +27,7 @@ static char	*str_gen(int n, unsigned int nbr, unsigned int dbase, size_t figs)
 	while (dbase > 1)
 	{
 		*str = nbr / dbase + '0';
-		nbr -= (*str + '0') * dbase;
+		nbr -= (*str - '0') * dbase;
 		dbase /= 10;
 		str++;
 	}
@@ -52,10 +52,10 @@ char	*ft_itoa(int n)
 	}
 	else
 		nbr = n;
-	while (nbr/ dbase > 10)
+	while (nbr / dbase >= 10)
 	{
 		dbase *= 10;
 		figs++;
 	}
-	return(str_gen(n, nbr, dbase, figs));
+	return (str_gen(n, nbr, dbase, figs));
 }

@@ -6,7 +6,7 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 13:52:52 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/12 12:51:52 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/14 13:09:34 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ptr[2][len_substr] = '\0';
 	return (ptr[2]);
 }
-

@@ -6,7 +6,7 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 19:38:33 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/09 19:18:05 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/14 13:07:53 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	ltl_len;
 	size_t	big_len;
-  
 
 	big_len = ft_strlen(big);
 	ltl_len = ft_strlen(little);

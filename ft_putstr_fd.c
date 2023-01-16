@@ -6,7 +6,7 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 22:39:29 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/13 18:57:54 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/14 13:30:06 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (s)
-		write(fd, s, ft_strlen(s));		
+		write (fd, s, ft_strlen(s));
 }

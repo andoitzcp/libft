@@ -6,7 +6,7 @@
 /*   By: acampo-p <acampo-p@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 17:29:31 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/13 18:35:11 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/14 13:02:22 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char	**ptr_arr_gen(const char *s, char c)
 
 	cmp = -1;
 	cntr = 1;
-	if (!*s ||(char)*s == c)
+	if (!*s || (char)*s == c)
 		cntr = 0;
 	while (*s)
 	{

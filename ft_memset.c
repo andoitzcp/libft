@@ -6,7 +6,7 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 22:17:07 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/09 14:48:21 by acampo-p         ###   ########.fr       */
+/*   Updated: 2022/12/14 13:00:37 by acampo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	char	*cs;
 
 	cs = s;
-		while (n--)
+	while (n--)
 			*cs++ = c;
 	return (s);
 }
