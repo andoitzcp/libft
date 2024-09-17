@@ -12,31 +12,31 @@
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_itoh(unsigned long n)
 {
 	unsigned int	len;
-	unsigned int	tmp;
-	char            *s;
-	char            *base;
+	unsigned long	tmp;
+	char			*hex;
+	char			*base;
 
 	len = 0;
-	if (n <= 0)
-		len++;
 	tmp = n;
+	if (n == 0)
+		len++;
 	while (tmp > 0)
 	{
-		tmp /= 10;
+		tmp /= 16;
 		len++;
 	}
-	s = (char *)ft_calloc(len + 1, sizeof(char));
-	base = ft_strdup("0123456789");
+	hex = (char *)ft_calloc(len + 1, sizeof(char));
+	base = ft_strdup("0123456789abcdefg");
 	tmp = n;
-	while (len-- > 0)
+	while (len > 0)
 	{
-		s[len] = base[tmp % 10];
-		tmp /= 10;
+		hex[len - 1] = base[tmp % 16];
+		tmp /= 16;
+		len--;
 	}
-	if (n < 0)
-		s[0] = '-';
-	return (free(base), s);
+	free(base);
+	return (hex);
 }
