@@ -17,6 +17,11 @@
 # include <stdio.h>
 # include <unistd.h>
 
+// Macro for ft_gnl
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 // Assertion functions (ft_issomething())
 int     ft_isalnum(int c);
 int     ft_isalpha(int c);
@@ -58,9 +63,15 @@ void    ft_putendl_fd(char *s, int fd);
 void    ft_putnbr_fd(int n, int fd);
 void    ft_putstr_fd(char *s, int fd);
 
+// Read
+char	*ft_gnl(int fd);
+
 //Conversions
 int     ft_atoi(const char *str);
 char    *ft_itoa(int n);
 char	*ft_itoh(unsigned long n);
+
+//Math
+int ft_abs(int n);
 
 #endif
