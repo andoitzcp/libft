@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,31 +12,9 @@
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+int ft_abs(int n)
 {
-	unsigned int	len;
-	unsigned int	tmp;
-	char            *s;
-	char            *base;
-
-	len = 0;
-	if (n <= 0)
-		len++;
-	tmp = ft_abs(n);
-	while (tmp != 0)
-	{
-		tmp /= 10;
-		len++;
-	}
-	s = (char *)ft_calloc(len + 1, sizeof(char));
-	base = ft_strdup("0123456789");
-	tmp = ft_abs(n);
-	while (len-- > 0)
-	{
-		s[len] = base[tmp % 10];
-		tmp /= 10;
-	}
-	if (n < 0)
-		s[0] = '-';
-	return (free(base), s);
+    if (n < 0)
+        return (-1 * n);
+    return (n);
 }
