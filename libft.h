@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <stddef.h>
 
 // Macro for ft_gnl
 # ifndef BUFFER_SIZE

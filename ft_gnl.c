@@ -12,6 +12,22 @@
 
 #include "libft.h"
 
+static ssize_t	ft_nextnlpos(const void *start)
+{
+	unsigned char	*cs;
+	ssize_t			indx;
+
+	cs = (unsigned char *) start;
+	indx = 0;
+	while (cs[indx] != '\0')
+	{
+		if (cs[indx] == '\n')
+			return (indx);
+		indx++;
+	}
+	return (-1);
+}
+
 static char	*ft_readfd(int fd, char *bufr, char scope)
 {
 	size_t	indx;
@@ -82,7 +98,7 @@ char	*ft_gnl(int fd)
 	if (!bufr)
 		return (NULL);
 	aux = ft_strdup("");
-	nl_indx = ft_strchr(bufr, '\n') - bufr;
+	nl_indx = ft_nextnlpos(bufr);
 	while (nl_indx == -1 && *bufr)
 	{
 		aux = ft_nlgen(aux, bufr);
