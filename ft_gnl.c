@@ -105,7 +105,7 @@ char	*ft_gnl(int fd)
 		bufr = ft_readfd(fd, bufr, 1);
 		if (!bufr)
 			return (NULL);
-		nl_indx = ft_strchr(bufr, '\n') - bufr;
+		nl_indx = ft_nextnlpos(bufr);
 	}
 	nl = ft_nlgen(aux, bufr);
 	aux = ft_strdup(bufr + nl_indx + 1);
