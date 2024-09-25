@@ -3,29 +3,32 @@
 
 int ft_xtoi(char *hex)
 {
-    char i;
+    int i;
+    int j;
     int x;
-    const char base;
+    char *base;
 
     if (!hex)
-        return (NULL);
+        return (0);
     i = 0;
-    while (hex[i] != '\0')
-        hex[i] = ft_tolower(hex[i]);
-    if (hex[0] != '0' && (hex[1]) != 'x')
-        perror("Not a valid hexadecimal string");
-    base = "0123456789abcdef";
+    if (ft_tolower(hex[0]) != '0' && ft_tolower(hex[1]) != 'x')
+        return(perror("Not a valid hexadecimal string"), 0);
+    base = ft_strdup("0123456789abcdef");
     i += 2;
+    x = 0;
     while (hex[i] != '\0')
     {
-
-
-
+        x *= 16;
+        j = 0;
+        while (ft_tolower(hex[i]) != base[j])
+        {
+            if (base[j] == '\0')
+                return (free(base), 0);
+            j++;
+        }
+        x += j;
+        i++;
     }
+    free(base);
+    return (x);
 }
-
-//int main(void)
-//{
-    //printf("hex1: %d\n", 0xff00); soon iguales
-    //printf("hex3: %d\n", 0x00ff00);
-//}

@@ -67,10 +67,14 @@ void    ft_putstr_fd(char *s, int fd);
 // Read
 char	*ft_gnl(int fd);
 
-//Conversions
+// Conversions
 int     ft_atoi(const char *str);
+int     ft_xtoi(char *str);
 char    *ft_itoa(int n);
 char	*ft_itoh(unsigned long n);
+
+// Free memory
+void ft_free2parray(char **array);
 
 //Math
 int ft_abs(int n);
