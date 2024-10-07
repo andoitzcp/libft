@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: acampo-p@student.42urduliz.com <marvi      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 21:38:11 by acampo-p          #+#    #+#             */
-/*   Updated: 2024/10/07 13:22:24 by acampo-p@        ###   ########.fr       */
+/*   Created: 2024/10/07 13:44:51 by acampo-p@         #+#    #+#             */
+/*   Updated: 2024/10/07 13:45:19 by acampo-p@        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_max(int *array, int len)
 {
-	size_t	index;
+	int	n;
+	int	i;
 
-	index = 0;
-	while (str[index] != '\0')
-		index += 1;
-	return (index);
+	n = INT_MIN;
+	i = 0;
+	while (i < len)
+	{
+		if (array[i] > n)
+			n = array[i];
+		i++;
+	}
+	return (n);
 }

@@ -6,7 +6,7 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 20:42:25 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/14 13:56:50 by acampo-p         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:21:16 by acampo-p@        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_itoa(int n)
 {
 	unsigned int	len;
 	unsigned int	tmp;
-	char            *s;
-	char            *base;
+	char			*s;
+	char			*base;
 
 	len = 0;
 	if (n <= 0)

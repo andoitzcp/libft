@@ -6,15 +6,15 @@
 /*   By: acampo-p <acampo-p@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 20:42:25 by acampo-p          #+#    #+#             */
-/*   Updated: 2022/12/14 13:56:50 by acampo-p         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:19:34 by acampo-p@        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_abs(int n)
+int	ft_abs(int n)
 {
-    if (n < 0)
-        return (-1 * n);
-    return (n);
+	if (n < 0)
+		return (-1 * n);
+	return (n);
 }
